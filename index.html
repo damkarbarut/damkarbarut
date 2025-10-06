@@ -84,10 +84,13 @@
       </div>
 
       <!-- Scroll Indicator -->
-      <div id="scroll-indicator" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-1">
-        <div class="w-[2px] h-6 bg-white/70 rounded-full"></div>
-        <div class="w-2 h-2 bg-white rounded-full"></div>
-      </div>
+      <div id="scroll-indicator" 
+     class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+</div>
+
     </section>
 
     <!-- Jenis Layanan -->
@@ -235,14 +238,14 @@
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
 
-    // animation indicator
+  // animation chevron indicator
     anime({
-      targets: '#scroll-indicator div:nth-child(2)',
-      translateY: [0, 6],
+      targets: '#scroll-indicator svg',
+      translateY: [0, 8],
       direction: 'alternate',
       loop: true,
       easing: 'easeInOutSine',
-      duration: 800
+      duration: 900
     });
 
     // text glow
